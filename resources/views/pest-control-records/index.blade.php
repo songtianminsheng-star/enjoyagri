@@ -18,6 +18,25 @@
     </a>
 </p>
 
+<form method="GET"
+      action="{{ route('pest-control-records.index', $crop->id) }}"
+      class="search-form"
+>
+    <label for="target_pest">対象病害虫</label>
+
+    <input type="text" 
+           id="target_pest"
+           name="target_pest"
+           value="{{ request('target_pest') }}"
+    >
+
+    <button type="submit"
+            class="submit-button"
+    >
+        検索
+    </button>
+</form>
+
 <table class="pest-control-records-table">
     <thead>
         <tr>

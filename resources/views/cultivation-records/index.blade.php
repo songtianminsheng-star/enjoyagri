@@ -19,6 +19,26 @@
 
 <p>作物名： {{ $crop->crop_name }}</p>
 
+<form method="GET" 
+      action="{{ route('cultivation-records.index', $crop->id) }}"
+      class="search-form"
+>
+    
+    <label for="work_date">作業日</label>
+
+    <input type="date" 
+           id="work_date"  
+           name="work_date" 
+           value="{{ request('work_date') }}"
+    >
+
+    <button type="submit" 
+            class="submit-button"
+    >
+            検索
+    </button>
+</form>
+
 <table class="cultivation-records-table">
     <tr>
         <th class="work-date-column">作業日時</th>

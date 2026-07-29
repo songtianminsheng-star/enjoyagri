@@ -8,11 +8,21 @@ use Illuminate\Http\Request;
 
 class pestControlRecordController extends Controller
 {
-    public function index(int $cropId)
+    public function index(Request $request, int $cropId)
     {
         $crop = Crop::find($cropId);
 
-        $pestControlRecords = $crop->pestControlRecords;
+        $query = $crop->pestControlRecords();
+
+        if ($request->filled('target_pest')) {
+            $query->where(
+                'target_pest',
+                'like',
+                '%' . $request->target_pest . '%'
+            );
+        }
+
+        $pestControlRecords = $query->get();
 
         return view(
             'pest-control-records.index',

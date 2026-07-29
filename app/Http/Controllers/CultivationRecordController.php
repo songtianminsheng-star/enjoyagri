@@ -8,11 +8,17 @@ use Illuminate\Http\Request;
 
 class CultivationRecordController extends Controller
 {
-    public function index(int $cropId)
+    public function index(Request $request, int $cropId)
     {
         $crop = Crop::find($cropId);
 
-        $cultivationRecords = $crop->cultivationRecords;
+        $query = $crop->cultivationRecords();
+        
+        if ($request->filled('work_date')) {
+            $query->whereDate('work_date', $request->work_date);
+        }
+
+        $cultivationRecords = $query->get();
 
         return view(
             'cultivation-records.index',
