@@ -1,0 +1,216 @@
+@import 'tailwindcss';
+@import './crops.css';
+
+@source '../../vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php';
+@source '../../storage/framework/views/*.php';
+
+@theme {
+    --font-sans: 'Instrument Sans', ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji',
+        'Segoe UI Symbol', 'Noto Color Emoji';
+}
+
+body {
+    margin: 0;
+    padding: 24px;
+}
+
+.main-nav {
+    display: flex;
+    gap: 24px;
+    padding-bottom: 16px;
+    margin-bottom: 24px;
+    border-bottom: 1px solid #cccccc;
+}
+
+.nav-link {
+    color: #333333;
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.2s;
+}
+
+.nav-link:hover {
+    color: #2f855a;
+}
+
+.nav-link.active {
+    color: #2f855a;
+}
+
+@media (max-width: 480px) {
+    .main-nav {
+        gap: 12px;
+    }
+}
+
+.cultivation-records-table {
+    width: 700px;
+    border-collapse: collapse;
+}
+
+.pest-control-records-table {
+    width: 400px;
+    border-collapse: collapse;
+    margin-top: 16px;
+}
+
+.pest-control-create-button {
+    margin-top: 12px;
+}
+
+.pest-control-record-detail-table {
+    width: 500px;
+    border-collapse: collapse;
+}
+
+.pest-control-record-detail-table th,
+.pest-control-record-detail-table td {
+    border: 1px solid #cccccc;
+    padding: 10px;
+    text-align: left;
+}
+
+.pest-control-record-detail-table th {
+    width: 130px;
+    background-color: #e8f5e9;
+}
+
+.back-button {
+    display: inline-block;
+    margin-top: 16px;
+    padding: 8px 16px;
+    background-color: #6c757d;
+    color: white;
+    text-decoration: none;
+    border-radius: 4px;
+}
+
+.back-button:hover {
+    background-color: #5a6268;
+}
+
+.detail-actions {
+    display: flex;
+    gap: 8px;
+    margin-top: 16px;
+}
+
+.back-button:active {
+    transform: translateY(1px);
+}
+
+.cultivation-records-table th,
+.cultivation-records-table td,
+.pest-control-records-table th,
+.pest-control-records-table td {
+    border: 1px solid #cccccc;
+    padding: 10px;
+}
+
+.cultivation-records-table th,
+.pest-control-records-table th {
+    background-color: #e8f5e9;
+}
+
+.cultivation-records-table tbody tr:hover,
+.pest-control-records-table tbody tr:hover {
+    background-color: #f1f8f2;
+}
+
+.cultivation-records-table
+.actions-column            {
+    width: 150px;
+    text-align: center;
+}
+
+.cultivation-records-table
+.work-date-column          {
+    width: 150px;
+}
+
+.cultivation-records-table
+.weather-column            {
+    width: 70px;
+}
+
+.cultivation-records-table
+.work-column               {
+    width: 90px;
+}
+
+.cultivation-records-table
+.memo-column               {
+    width: 240px;
+}
+
+.cultivation-record-form label {
+    display: block;
+    margin-bottom: 16px
+}
+
+.cultivation-record-form input,
+.cultivation-record-form textarea {
+    display: block;
+    width: 100%;
+    padding: 8px;
+    box-sizing: border-box;
+    border: 1px solid #cccccc;
+    border-radius: 4px;
+}
+
+.table-wrapper {
+    width: 100%;
+    overflow-x: auto;
+}
+
+.crop-form,
+.cultivation-record-form,
+.pest-control-record-form {
+    max-width: 600px;
+    background-color: #ffffff;
+    padding: 24px;
+    border: 1px solid #cccccc;
+    border-radius: 8px;
+    box-shadow: 0 2px rgba(0, 0, 0, 08);
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 6px 10px;
+    box-sizing: border-box;
+    border: 1px solid #cccccc;
+    border-radius: 4px;
+    transition: border-color 0.2s, outline-color 0.2s;
+}
+
+.form-group input:focus {
+    border-color: #2f855a;
+    outline: 2px solid #9ae6b4;
+    outline-offset: 1px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0;
+}
+
+.submit-button {
+    background-color: #2f855a;
+    color: #ffffff;
+    padding: 8px 16px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.submit-button:hover {
+    background-color: #276749;
+}
+
+.submit-button:active {
+    transform: translateY(1px);
+}

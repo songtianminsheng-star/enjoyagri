@@ -1,0 +1,100 @@
+.page-header {
+    display: flex;
+    justify-content: space-between;
+    max-width: 700px;
+    align-items: center;
+    margin-bottom: 12px;
+}
+
+.create-button {
+    display: inline-block;
+    background-color: #28a745;
+    color: white;
+    padding: 8px 16px;
+    text-decoration: none;
+    border-radius: 4px;
+}
+
+.create-button:hover {
+    background-color: #218838;
+}
+
+.page-header h1 {
+    margin: 0;
+}
+.crop-table {
+    border-collapse: collapse;
+    width: 100%;
+    max-width: 700px;
+}
+
+.crop-table th,
+.crop-table td {
+    border: 1px solid #cccccc;
+    padding: 12px;
+}
+
+.crop-table th {
+    background-color: #f5f5f5;
+    font-weight: bold;
+    text-align: center;
+}
+
+.crop-table td {
+    text-align: center;
+}
+.crop-table tr:hover {
+    background-color: #f9f9f9;
+}
+
+.edit-button,
+.pest-control-button {
+    display: inline-block;
+    padding: 6px 12px;
+    border-radius: 6px;
+    background-color: #2563eb;
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.delete-button {
+    padding: 6px 12px;
+    border: none;
+    border-radius: 6px;
+    background-color: #dc2626;
+    color: #ffffff;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.crop-table th:nth-child(4)
+.crop-table th:nth-child(5) {
+    width: 80px;
+}
+
+.edit-button:hover,
+.pest-control-button:hover {
+    background-color: #1b40af;
+}
+
+.delete-button:hover {
+    background-color: #b91c1c;
+}
+
+.create-button:active,
+.edit-button:active,
+.delete-button:active,
+.pest-control-button:active {
+    transform: translateY(4px);
+}
+
+.create-button,
+.edit-button,
+delete-button {
+    transition: background-color 0.2s, transform 0.1s;
+}
+
+.crop-name-link {
+    color: #2f855a;
+}
