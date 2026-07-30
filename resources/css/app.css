@@ -118,7 +118,7 @@ body {
 .pest-control-records-table th,
 .pest-control-records-table td {
     border: 1px solid #cccccc;
-    padding: 0;
+    padding: 8px;
 }
 
 .cultivation-records-table th,
@@ -227,4 +227,13 @@ body {
 
 .submit-button:active {
     transform: translateY(1px);
+}
+
+.login-form {
+    max-width: 700px;
+}
+
+.error-message {
+    color: #dc3545;
+    margin-top: 5px;
 }

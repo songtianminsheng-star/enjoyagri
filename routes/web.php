@@ -3,6 +3,7 @@ use App\Http\Controllers\HomeController;
 use App\Http\Controllers\CropController;
 use App\http\controllers\CultivationRecordController;
 use App\http\controllers\pestControlRecordController;
+use App\Http\Controllers\AuthController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', [HomeController::class, 'index'])
@@ -11,6 +12,14 @@ Route::get('/about', [HomeController::class, 'about'])
     ->name('about');
 Route::get('/contact', [HomeController::class, 'contact'])
     ->name('contact');
+Route::get('/login', [AuthController::class, 'showLoginForm'])
+    ->name('login');
+Route::post('/login', [AuthController::class, 'login'])
+    ->name('login.submit');
+Route::post('/logout', [AuthController::class, 'logout'])
+    ->name('logout');
+Route::middleware('auth')->group(function () {
+
 Route::get('/crops', [CropController::class, 'index'])
     ->name('crops.index');
 Route::get('/crops/create', [CropController::class, 'create'])
@@ -71,4 +80,5 @@ Route::delete(
     '/crops/{cropId}/pest-control-records/{id}',
     [PestControlRecordController::class, 'destroy'] 
 )->name('pest-control-records.destroy');
-    
+
+});
