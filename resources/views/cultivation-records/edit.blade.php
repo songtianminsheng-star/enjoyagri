@@ -18,7 +18,7 @@
         作業日時
         <input 
             type="datetime-local"
-            name="treatment_date"
+            name="work_date"
             value="{{ old('work_date', $cultivationRecord->work_date) }}"
         >
 

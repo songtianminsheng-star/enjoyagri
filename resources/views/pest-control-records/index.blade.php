@@ -48,7 +48,10 @@
         @foreach($pestControlRecords as $record)
             <tr>
                 <td>
-                    <a href="{{ route('pest-control-records.show', [$crop->id, $record->id]) }}">
+                    <a 
+                        class="record-detail-link"
+                        href="{{ route('pest-control-records.show', [$crop->id, $record->id]) }}"
+                    >
                         {{ $record->treatment_date }}
                     </a>
                 </td>
