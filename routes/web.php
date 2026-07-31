@@ -1,17 +1,13 @@
 <?php
-use App\Http\Controllers\HomeController;
 use App\Http\Controllers\CropController;
 use App\http\controllers\CultivationRecordController;
 use App\http\controllers\pestControlRecordController;
 use App\Http\Controllers\AuthController;
 use Illuminate\Support\Facades\Route;
 
-Route::get('/', [HomeController::class, 'index'])
-    ->name('home');
-Route::get('/about', [HomeController::class, 'about'])
-    ->name('about');
-Route::get('/contact', [HomeController::class, 'contact'])
-    ->name('contact');
+Route::get('/', function ()  {
+    return redirect()->route('crops.index');
+});
 Route::get('/login', [AuthController::class, 'showLoginForm'])
     ->name('login');
 Route::post('/login', [AuthController::class, 'login'])
