@@ -42,7 +42,7 @@ class CropController extends Controller
 
     public function edit(int $id) 
     {
-        $crop = Crop::find($id);
+        $crop = Crop::findOrFail($id);
 
         return view('crops.edit', compact('crop'));
     }
@@ -56,7 +56,7 @@ class CropController extends Controller
 
         ]);
 
-        $crop = Crop::find($id);
+        $crop = Crop::findOrFail($id);
 
         $crop->crop_name = $validated['crop_name'];
         $crop->variety = $validated['variety'];
@@ -70,7 +70,7 @@ class CropController extends Controller
 
     public function destroy(int $id)
     {
-        $crop = Crop::find($id);
+        $crop = Crop::findOrFail($id);
 
         if (
             $crop->cultivationRecords()->exists()

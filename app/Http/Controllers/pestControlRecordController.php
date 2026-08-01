@@ -10,7 +10,7 @@ class pestControlRecordController extends Controller
 {
     public function index(Request $request, int $cropId)
     {
-        $crop = Crop::find($cropId);
+        $crop = Crop::findOrFail($cropId);
 
         $query = $crop->pestControlRecords();
 
@@ -32,7 +32,7 @@ class pestControlRecordController extends Controller
 
     public function create(int $cropId)
     {
-        $crop = Crop::find($cropId);
+        $crop = Crop::findOrFail($cropId);
 
         return view(
             'pest-control-records.create',
@@ -42,6 +42,9 @@ class pestControlRecordController extends Controller
 
     public function store(Request $request, int $cropId)
     {
+
+        $crop = Crop::findOrFail($cropId);
+
         $validated = $request->validate(
             [
                 'treatment_date' => 'required|date',
@@ -89,18 +92,18 @@ class pestControlRecordController extends Controller
 
     public function show(int $cropId, int $id)
     {
-        $crop = Crop::find($cropId);
+        $crop = Crop::findOrFail($cropId);
 
-        $pestControlRecord = PestControlRecord::find($id);
+        $pestControlRecord = $crop->PestControlRecords()->findOrFail($id);
 
         return view('pest-control-records.show', compact('crop', 'pestControlRecord'));
     } 
 
     public function edit(int $cropId, int $id)
     {
-        $crop = Crop::find($cropId);
+        $crop = Crop::findOrFail($cropId);
 
-        $pestControlRecord = PestControlRecord::find($id);
+        $pestControlRecord = $crop->PestControlRecords()->findOrFail($id);
 
         return view(
             'pest-control-records.edit',
@@ -136,7 +139,10 @@ class pestControlRecordController extends Controller
             ]
         
         );
-        $pestControlRecord = PestControlRecord::find($id);
+
+        $crop = Crop::findOrFail($cropId);
+
+        $pestControlRecord = $crop->PestControlRecords()->findOrFail($id);
         
         $pestControlRecord->treatment_date = $validated['treatment_date'];
         $pestControlRecord->weather = $validated['weather'];
@@ -157,7 +163,9 @@ class pestControlRecordController extends Controller
     
     public function destroy(int $cropId, int $id)
     {
-        $pestControlRecord = PestControlRecord::find($id);
+        $crop = Crop::findOrFail($cropId);
+        
+        $pestControlRecord = $crop->PestControlRecords()->findOrFail($id);
 
         $pestControlRecord->delete(); 
 

@@ -10,7 +10,7 @@ class CultivationRecordController extends Controller
 {
     public function index(Request $request, int $cropId)
     {
-        $crop = Crop::find($cropId);
+        $crop = Crop::findOrFail($cropId);
 
         $query = $crop->cultivationRecords();
         
@@ -58,9 +58,9 @@ class CultivationRecordController extends Controller
     }
     public function edit(int $cropId, int $id)
     {
-        $crop = crop::find($cropId);
+        $crop = Crop::findOrFail($cropId);
 
-        $cultivationRecord = CultivationRecord::find($id);
+        $cultivationRecord = $crop->cultivationRecords()->findOrFail($id);
 
         return view(
             'cultivation-records.edit',
@@ -76,7 +76,8 @@ class CultivationRecordController extends Controller
             'memo' => 'nullable',
         ]);
 
-        $cultivationRecord = CultivationRecord::find($id);
+        $crop = Crop::findOrFail($cropId);
+        $cultivationRecord = $crop->CultivationRecords()->findOrFail($id);
 
         $cultivationRecord->work_date = $validated['work_date'];
         $cultivationRecord->weather = $validated['weather'];
@@ -91,7 +92,8 @@ class CultivationRecordController extends Controller
     }
     public function destroy(int $cropId, int $id) 
     {
-        $cultivationRecord = CultivationRecord::find($id);
+        $crop = Crop::findOrFail($cropId);
+        $cultivationRecord = $crop->CultivationRecords()->findOrFail($id);
 
         $cultivationRecord->delete();
 
