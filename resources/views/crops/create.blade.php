@@ -17,7 +17,7 @@
         >
 
         @error('crop_name')
-            <p>{{ $message }}</p>
+            <p class="error-message">{{ $message }}</p>
         @enderror
     </div>
 
@@ -37,7 +37,7 @@
         >
 
         @error('cultivation_start_date')
-            <p>{{ $message }}</p>
+            <p class="error-message">{{ $message }}</p>
         @enderror
     </div>
 

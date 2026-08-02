@@ -21,7 +21,7 @@
         >
 
             @error('treatment_date')
-                <span>{{ $message }}</span>
+                <span class="error-message">{{ $message }}</span>
             @enderror
     </p>
 
@@ -33,7 +33,7 @@
         >
 
             @error('weather')
-                <span>{{ $message }}</span>
+                <span class="error-message">{{ $message }}</span>
             @enderror
     </p>
 
@@ -45,7 +45,7 @@
         >
 
         @error('target_pest')
-            <span>{{ $message }}</span>
+            <span class="error-message">{{ $message }}</span>
         @enderror
     </p>
 
@@ -57,7 +57,7 @@
         >
 
         @error('pesticide_name')
-            <span>{{ $message }}</span>
+            <span class="error-message">{{ $message }}</span>
         @enderror
     </p>
 
@@ -69,7 +69,7 @@
         >
 
         @error('dilution_rate')
-            <span>{{ $message }}</span>
+            <span class="error-message">{{ $message }}</span>
         @enderror
     </p>
 
@@ -81,7 +81,7 @@
         >
 
         @error('amount')
-            <span>{{ $message }}</span>
+            <span class="error-message">{{ $message }}</span>
         @enderror
     </p>
 
@@ -93,7 +93,7 @@
         >
 
         @error('usage_count')
-            <span>{{ $message }}</span>
+            <span class="error-message">{{ $message }}</span>
         @enderror
     </p>
 
@@ -105,7 +105,7 @@
         >
 
         @error('usage_period')
-            <span>{{ $message }}</span>
+            <span class="error-message">{{ $message }}</span>
         @enderror
     </p>
 
@@ -117,7 +117,7 @@
         >
 
         @error('memo')
-            <span>{{ $message }}</span>
+            <span class="error-message">{{ $message }}</span>
         @enderror
     </p>
 

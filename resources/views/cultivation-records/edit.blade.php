@@ -23,7 +23,7 @@
         >
 
         @error('work_date')
-            <span>{{ $message }}</span>
+            <span class="error-message">{{ $message }}</span>
         @enderror
     </p>
 
@@ -36,7 +36,7 @@
         >
 
         @error('weather')
-            <span>{{ $message }}</span>
+            <span class="error-message">{{ $message }}</span>
         @enderror
     </p>
 
@@ -45,7 +45,7 @@
         <textarea name="work">{{ old('work', $cultivationRecord->work) }}</textarea>
 
         @error('work')
-            <span>{{ $message }}</span>
+            <span class="error-message">{{ $message }}</span>
         @enderror
     </p>
 
@@ -54,7 +54,7 @@
         <textarea name="memo">{{ old('memo', $cultivationRecord->memo) }}</textarea>
             
         @error('memo')
-            <span>{{ $message }}</span>
+            <span class="error-message">{{ $message }}</span>
         @enderror
     </p>
 

@@ -41,6 +41,11 @@ class CultivationRecordController extends Controller
             'weather' => 'required',
             'work' => 'required',
             'memo' => 'nullable',
+        ], [
+            'work_date.required' => '作業日時は必須です。',
+            'work_date.date' => '作業日時を正しく入力してください。',
+            'weather.required' => '天候は必須です。',
+            'work.required' => '作業内容は必須です。',
         ]);
 
         $cultivationRecord = new CultivationRecord();
@@ -74,6 +79,11 @@ class CultivationRecordController extends Controller
             'weather' => 'required',
             'work' => 'required',
             'memo' => 'nullable',
+        ], [
+            'work_date.required' => '作業日時は必須です。',
+            'work_date.date' => '作業日時を正しく入力してください。',
+            'weather.required' => '天候は必須です。',
+            'work.required' => '作業内容は必須です。',
         ]);
 
         $crop = Crop::findOrFail($cropId);

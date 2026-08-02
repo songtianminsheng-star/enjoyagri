@@ -48,7 +48,7 @@
         <th class="actions-column">操作</th>
     </tr>
 
-    @foreach ($cultivationRecords as $record)
+    @forelse ($cultivationRecords as $record)
         <tr>
             <td class="work-date-column">{{ $record->work_date }}</td>
             <td class="weather-column">{{ $record->weather }}</td>
@@ -81,6 +81,10 @@
                 </form>
             </td>
         </tr>
-    @endforeach
+        @empty
+            <tr>
+                <td colspan="5">該当する記録はありません</td>
+            </tr>
+    @endforelse
 </table>
 @endsection

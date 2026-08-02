@@ -237,3 +237,7 @@ body {
     color: #dc3545;
     margin-top: 5px;
 }
+
+.error-message {
+    color: #dc2626;
+}

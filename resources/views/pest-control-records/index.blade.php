@@ -45,7 +45,7 @@
     </thead>
 
     <tbody>
-        @foreach($pestControlRecords as $record)
+        @forelse($pestControlRecords as $record)
             <tr>
                 <td>
                     <a 
@@ -56,7 +56,11 @@
                     </a>
                 </td>
             </tr>
-        @endforeach
+            @empty
+            <tr>
+                <td colspan="5">該当する記録はありません</td>
+            </tr>
+        @endforelse
     </tbody>
 </table>
 @endsection
