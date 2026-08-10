@@ -6,7 +6,7 @@ use App\Models\Crop;
 use App\Models\PestControlRecord;
 use Illuminate\Http\Request;
 
-class pestControlRecordController extends Controller
+class PestControlRecordController extends Controller
 {
     public function index(Request $request, int $cropId)
     {

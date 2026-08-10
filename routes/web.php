@@ -1,7 +1,7 @@
 <?php
 use App\Http\Controllers\CropController;
 use App\http\controllers\CultivationRecordController;
-use App\http\controllers\pestControlRecordController;
+use App\http\controllers\PestControlRecordController;
 use App\Http\Controllers\AuthController;
 use Illuminate\Support\Facades\Route;
 
