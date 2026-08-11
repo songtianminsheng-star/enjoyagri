@@ -14,6 +14,6 @@ class Crop extends Model
 
     public function pestControlRecords(): HasMany
     {
-        return $this->hasmany(PestcontrolRecord::class);
+        return $this->hasMany(PestcontrolRecord::class);
     }
 }
