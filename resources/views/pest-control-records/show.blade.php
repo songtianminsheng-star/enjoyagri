@@ -2,9 +2,9 @@
 
 @section('content')
 
-    <h1>防除記録詳細</h1>
-
-    <table class="pest-control-record-detail-table">    
+<h1>防除記録詳細</h1>
+<div class="table-wrapper">
+    <table class="pest-control-record-detail-table">
         <tr>
             <th>防除日時</th>
             <td>{{ $pestControlRecord->treatment_date }}</td>
@@ -42,32 +42,29 @@
             <td>{{ $pestControlRecord->memo }}</td>
         </tr>
     </table>
+</div>
 
-    <div class="detail-actions">
-        <a href="{{ route('pest-control-records.edit', [$crop->id, $pestControlRecord->id]) }}"
-           class="edit-button"
-        >
-            編集
-        </a>
-
-        <form action="{{ route('pest-control-records.destroy', [$crop->id, $pestControlRecord->id]) }}"
-              method="POST"
-        >
-            @csrf
-            @method('DELETE')
-
-            <button type="submit"
-                    class="delete-button"
-                    onclick="return confirm('この防除記録を削除しますか？')"
-            >
-                削除
-            </button>
-        </form>
-    </div>
-
-    <a href="{{ route('pest-control-records.index', $crop->id) }}"
-       class="back-button"
-    >
-        一覧へ戻る
+<div class="detail-actions">
+    <a href="{{ route('pest-control-records.edit', [$crop->id, $pestControlRecord->id]) }}"
+        class="edit-button">
+        編集
     </a>
+
+    <form action="{{ route('pest-control-records.destroy', [$crop->id, $pestControlRecord->id]) }}"
+        method="POST">
+        @csrf
+        @method('DELETE')
+
+        <button type="submit"
+            class="delete-button"
+            onclick="return confirm('この防除記録を削除しますか？')">
+            削除
+        </button>
+    </form>
+</div>
+
+<a href="{{ route('pest-control-records.index', $crop->id) }}"
+    class="back-button">
+    一覧へ戻る
+</a>
 @endsection

@@ -98,3 +98,20 @@ delete-button {
 .crop-name-link {
     color: #2f855a;
 }
+
+@media (max-width: 768px) {
+    .table-wrapper {
+        width: 100%;
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+    }
+
+    .crop-table {
+        min-width: 700px;
+    }
+
+    .crop-table th,
+    .crop-table td {
+        white-space: nowrap;
+    }
+}
