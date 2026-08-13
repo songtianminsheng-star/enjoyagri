@@ -20,7 +20,7 @@ return new class extends Migration
             $table->string('dilution_rate');
             $table->string('amount');
             $table->string('target_pest');
-            $table->text('memo')->nullable;
+            $table->text('memo')->nullable();
             $table->timestamps();
         });
     }   

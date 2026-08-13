@@ -11,11 +11,10 @@ return new class extends Migration
      */
     public function up(): void
     {
+
         Schema::table('pest_control_records', function (Blueprint $table) {
-            Schema::table('pest_control_records', function (Blueprint $table) {
-                $table->string('usage_count')->nullable();
-                $table->string('usage_period')->nullable();
-            });
+            $table->string('usage_count')->nullable();
+            $table->string('usage_period')->nullable();
         });
     }
 
