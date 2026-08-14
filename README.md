@@ -1,58 +1,93 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+# ENJOYagri
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+農業初心者が、作物ごとの栽培作業や防除作業を記録・管理できるWebアプリケーションです。
 
-## About Laravel
+日々の栽培記録を整理し、過去の作業を振り返ることで、農作業の改善につなげることを目的としています。
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+## 公開URL
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+https://enjoyagri-production.up.railway.app
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+## 制作背景
 
-## Learning Laravel
+農業大学校で栽培管理に取り組んだ際、日々の管理に多くの時間がかかり、家族との時間や趣味の時間を十分に確保できないという経験がありました。
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+栽培管理の効率化と栽培品質の向上を目指し、Googleスプレッドシートを使った管理システムを作成しましたが、当時の技術力では、記録した情報を十分に整理・活用できるものにはできませんでした。
 
-In addition, [Laracasts](https://laracasts.com) contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+この経験から、栽培記録や防除記録を作物ごとに管理し、過去の情報を短時間で振り返ることができる、より使いやすいシステムを開発したいと考え、ENJOYagriを制作しました。
 
-You can also watch bite-sized lessons with real-world projects on [Laravel Learn](https://laravel.com/learn), where you will be guided through building a Laravel application from scratch while learning PHP fundamentals.
+## 主な機能
 
-## Agentic Development
+- ログイン・ログアウト
+- 作物の登録・一覧表示・編集・削除
+- 栽培記録の登録・一覧表示・検索・編集・削除
+- 防除記録の登録・一覧表示・検索・詳細表示・編集・削除
+- パソコン・スマートフォンでの表示
 
-Laravel's predictable structure and conventions make it ideal for AI coding agents like Claude Code, Cursor, and GitHub Copilot. Install [Laravel Boost](https://laravel.com/docs/ai) to supercharge your AI workflow:
+## 対象ユーザー
 
-```bash
-composer require laravel/boost --dev
+- 新規就農者
+- 家庭菜園に取り組む人
+- 農業高校・農業大学校などで農業を学ぶ学生
 
-php artisan boost:install
-```
+## 使用技術
 
-Boost provides your agent 15+ tools and skills that help agents build Laravel applications while following best practices.
+- PHP
+- Laravel
+- HTML
+- CSS
+- JavaScript
+- SQLite
+- Git・GitHub
+- Railway
 
-## Contributing
+## 工夫した点
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+- 作物を起点として、栽培記録と防除記録を関連付けて管理できる構成にしました。
+- 日付から必要な栽培記録を検索できるようにしました。
+- 対象病害虫から必要な防除記録を検索できるようにしました。
+- 防除記録は使用内容を確認しやすいように、一覧画面とは別に詳細画面を設けました。
+- パソコンとスマートフォンの両方で操作しやすいように、画面表示やボタンの配置を調整しました。
 
-## Code of Conduct
+## デモ用アカウント
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+- メールアドレス：demo@enjoyagri.com
+- パスワード：demo1234
 
-## Security Vulnerabilities
+## 画像イメージ
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+### 作物一覧画面
 
-## License
+![作物一覧画面](public/images/crop-list.png)
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+## 栽培記録一覧画面
+
+![栽培記録一覧画面](public/images/cultivation-record-list.png)
+
+## 防除記録一覧画面
+
+![防除記録一覧画面](public/images/pest-control-record-list.png)
+
+## 今後の改善予定
+
+- 売上情報と出荷量を管理する機能
+- 栽培記録・防除記録・売上情報を関連付けて確認する機能
+- 蓄積した記録を栽培改善に活用するための分析機能
+
+## 開発で苦労した点と解決方法
+
+### 1. 使用技術の選定
+
+初めてのWebアプリケーション開発だったため、目的とする機能を実現するには、どの技術を選び、どのように組み合わせればよいのかという判断に苦労しました。
+
+サーバーサイドの技術を調べる中で、日本のWeb開発ではPHPやRubyなどが広く利用されていることを知りました。その中から、長い利用実績があり、学習教材や情報も豊富なPHPを選択しました。
+
+また、開発に必要な基本機能を効率よく実装するため、PHPのフレームワークであるLaravelを採用しました。データベースには、Laravelが標準で対応しており、別途データベースサーバーを用意せずに利用できるSQLiteを選択しました。
+
+### 2. LaravelにおけるMVCの理解
+
+開発当初は、LaravelのModel・View・Controllerがそれぞれどのような役割を持ち、どのように連携して画面表示やデータ操作を行うのかを理解することに苦労しました。
+
+実際に作物や栽培記録の登録・表示・編集・削除機能を実装する中で、Controllerがユーザーからの要求を受け取って処理を組み立て、Modelを通じてデータベースを操作し、取得したデータをViewへ渡して画面に表示するという流れを学びました。
+
+機能ごとに処理の流れを確認することで、それぞれの役割と、MVCを分けて構成する意味を理解できるようになりました。
